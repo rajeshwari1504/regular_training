@@ -6,10 +6,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
-
-  constructor() { }
+  serverId:number=10;
+  serverstatus:String="offine";
+  allowNewserver=false;
+  servercreaternew = 'no server is created!';
+  serverName='';
+  getserverstatus(){
+     return this.serverstatus ;   
+  }
+  constructor() { 
+    setTimeout(() => {
+      this.allowNewserver= true;
+      
+    }, 2000);
+  }
 
   ngOnInit(): void {
+  }
+  onCreateserver(){
+     this.servercreaternew ='server is created!';
+  }
+  onupdateserver(event :Event){
+     this.serverName =(<HTMLInputElement>event.target).value;
   }
 
 }

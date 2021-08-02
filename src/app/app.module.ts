@@ -10,12 +10,14 @@ import { MyserviceService } from './myservice.service';
 @NgModule({
   declarations: [
     AppComponent,
+  EmployeeComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
+    CompanyModule,
+
   ],
   providers: [MyserviceService],
   bootstrap: [AppComponent]

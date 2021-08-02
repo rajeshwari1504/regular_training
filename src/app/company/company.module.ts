@@ -6,7 +6,7 @@ import { EmployeeComponent } from './employee/employee.component';
 
 @NgModule({
   declarations: [
-    EmployeeComponent
+    
   ],
   imports: [
     CommonModule,

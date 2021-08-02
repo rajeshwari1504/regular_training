@@ -1,1 +1,10 @@
-<p>employee will works!</p>
+<label>Server Form</label>
+<input
+type="text"
+class="form-control"
+(input)="onupdateserver($event)">
+<p>{{ serverName }}</p>
+<button class="btn btn-primary" [disabled]="!allowNewserver" (click)="onCreateserver()">Add server</button>
+<p>{{ servercreaternew }}</p>
+<h3> By interpolation :-{{'server'}} with ID = {{ serverId }} is {{ getserverstatus() }} </h3>
+<h3> interpolation by Function :-{{'server'}} with ID = {{ serverId }} is {{ serverstatus }} </h3>
