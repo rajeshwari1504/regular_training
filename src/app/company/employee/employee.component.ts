@@ -10,7 +10,8 @@ export class EmployeeComponent implements OnInit {
   serverstatus:String="offine";
   allowNewserver=false;
   servercreaternew = 'no server is created!';
-  serverName='';
+  serverName='test';
+  servercreatename=false;
   getserverstatus(){
      return this.serverstatus ;   
   }
@@ -24,6 +25,7 @@ export class EmployeeComponent implements OnInit {
   ngOnInit(): void {
   }
   onCreateserver(){
+    this.servercreatename=true;
      this.servercreaternew ='server is created!';
   }
   onupdateserver(event :Event){
