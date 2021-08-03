@@ -1,4 +1,8 @@
-helllo...
-<hr>
 <app-employee></app-employee>
 <app-username></app-username>
+<hr>
+<h4>
+<button class="btn btn-primary" (click)="Ondisplay()">Display button</button>
+<div *ngIf="showbtn">Secreate tune on </div>
+<div *ngFor="let logitem of logArray " [ngStyle]="{backgroundColor :logitem >=5 ?'blue':'tranparent'}" 
+    [ngClass]="{'white-text':logitem >=5}"> {{logitem}} </div>
