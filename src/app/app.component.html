@@ -1,8 +1,24 @@
 <app-employee></app-employee>
-<app-username></app-username>
 <hr>
-<h4>
 <button class="btn btn-primary" (click)="Ondisplay()">Display button</button>
 <div *ngIf="showbtn">Secreate tune on </div>
 <div *ngFor="let logitem of logArray " [ngStyle]="{backgroundColor :logitem >=5 ?'blue':'tranparent'}" 
     [ngClass]="{'white-text':logitem >=5}"> {{logitem}} </div>
+<div class="container">
+<div class="row">
+    <div class="col-xs-5">
+        <app-username *ngFor="let serverElement of serverElements">
+            <p>
+                <strong *ngIf="serverElement.type ==='server'" style="color:red">{{ serverElement.content }}</strong>
+               <em *ngIf= "serverElement.type ==='buleprint'" >{{ serverElement.content }}</em>
+               </p>
+            [element]="serverElement" 
+        </app-username>
+    </div>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-5">
+    <app-game (intervalFried)="onIntervalFried($event)"></app-game>
+</div>
+</div>

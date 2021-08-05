@@ -1,4 +1,4 @@
-import { Component, HostListener,Inject ,Input } from '@angular/core';
+import { Component, HostListener,Inject  } from '@angular/core';
 import { MyserviceService } from './myservice.service';
 
 @Component({
@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'demoapp';
   showbtn=false;
   logArray: number[] = [];  
-   
+  serverElements = [{type:'server',name:'testserver',content:'just is time'}];
   constructor(){
      console.log("i m the component");
   
@@ -21,5 +21,8 @@ export class AppComponent {
     this.  logArray .push(this.  logArray .length + 1);
     // this.logArray .push();
 
+  }
+  onIntervalFried(FriedNumber:number){
+    console.log(FriedNumber);
   }
 }

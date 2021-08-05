@@ -8,12 +8,18 @@ import { CompanyModule } from './company/company.module';
 import { EmployeeComponent } from './company/employee/employee.component';
 import { MyserviceService } from './myservice.service';
 import { UsernameComponent } from './username/username.component';
+import { GameComponent } from './game/game.component';
+import { OddComponent } from './odd/odd.component';
+import { EvenComponent } from './even/even.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
-    UsernameComponent
+    UsernameComponent,
+    GameComponent,
+    OddComponent,
+    EvenComponent
 
   ],
   imports: [

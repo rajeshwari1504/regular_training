@@ -4,3 +4,14 @@ class="form-control"
 [(ngModel)]="userName">
 <h3>{{userName}}</h3>
 <button class="btn btn-primary" [disabled]="userName ==='' " (click)="userName = ''">Reset button</button>
+<hr>
+<!-- <div class="panel-panel-default">
+    <div class="panel-heading">{{element.name}} </div>
+        <div class="panel-body">
+         <p>
+            <strong *ngIf="element.type ==='server'" style="color:red">{{element.content}}</strong>
+            <em *ngIf= "element.type ==='buleprint'">{{element.content}}</em>
+            </p>
+        </div>
+   
+</div> -->
