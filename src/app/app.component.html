@@ -22,3 +22,9 @@
     <app-game (intervalFried)="onIntervalFried($event)"></app-game>
 </div>
 </div>
+<div class="row">
+<div class="col-xs-5">
+    <app-odd *ngFor="let oddnumbers of oddnumber" [number]="oddnumbers" ></app-odd>
+    <app-even  *ngFor="let evennumbers of evennumber" [number]="evennumbers" ></app-even>
+</div>
+</div>

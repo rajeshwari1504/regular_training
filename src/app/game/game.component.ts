@@ -1,5 +1,5 @@
 import { Component, OnInit,EventEmitter, Output } from '@angular/core';
-import { interval } from 'rxjs';
+// import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-game',
@@ -8,7 +8,7 @@ import { interval } from 'rxjs';
 })
 export class GameComponent implements OnInit {
   @Output() intervalFried=new EventEmitter<number>();
-  [interval: string]: any;
+  interval:any;
   lastNumber=0;
   constructor() { }
 
@@ -19,5 +19,8 @@ export class GameComponent implements OnInit {
    this.intervalFried.emit(this.lastNumber +1);
    this.lastNumber++;
    },1000);
+  }
+  onpauseIvent(){
+    clearInterval(this.interval);
   }
 }

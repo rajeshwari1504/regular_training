@@ -7,6 +7,9 @@ import { MyserviceService } from './myservice.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  oddnumber:number[]=[];
+  evennumber:number[]=[];
+
   title = 'demoapp';
   showbtn=false;
   logArray: number[] = [];  
@@ -23,6 +26,11 @@ export class AppComponent {
 
   }
   onIntervalFried(FriedNumber:number){
-    console.log(FriedNumber);
+    if(FriedNumber %2 ===0){
+      this.evennumber.push(FriedNumber);
+    }
+    else{
+      this.oddnumber.push(FriedNumber);
+    }
   }
 }

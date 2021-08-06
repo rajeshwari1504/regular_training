@@ -1,7 +1,7 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { interval } from 'rxjs';
-// interface Eletype {
-//   type: string, name: string,content: string}
+ interface Eletype {
+  type: string, name: string,content: string}
 
 @Component({
   selector: 'app-username',
