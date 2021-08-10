@@ -9,6 +9,7 @@ import { MyserviceService } from './myservice.service';
 export class AppComponent {
   oddnumber:number[]=[];
   evennumber:number[]=[];
+  value=10;
 
   title = 'demoapp';
   showbtn=false;
