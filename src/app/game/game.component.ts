@@ -1,4 +1,4 @@
-import { Component, OnInit,EventEmitter, Output } from '@angular/core';
+import { Component, OnInit,EventEmitter, Output, Input } from '@angular/core';
 // import { interval } from 'rxjs';
 
 @Component({
@@ -8,6 +8,7 @@ import { Component, OnInit,EventEmitter, Output } from '@angular/core';
 })
 export class GameComponent implements OnInit {
   @Output() intervalFried=new EventEmitter<number>();
+  // @Input() number:any
   interval:any;
   lastNumber=0;
   constructor() { }
