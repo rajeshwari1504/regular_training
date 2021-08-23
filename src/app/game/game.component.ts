@@ -8,7 +8,7 @@ import { Component, OnInit,EventEmitter, Output, Input } from '@angular/core';
 })
 export class GameComponent implements OnInit {
   @Output() intervalFried=new EventEmitter<number>();
-  // @Input() number:any
+  //  @Input() number:any
   interval:any;
   lastNumber=0;
   constructor() { }

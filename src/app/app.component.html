@@ -1,45 +1,131 @@
-<app-employee></app-employee>
-<hr>
-<button class="btn btn-primary" (click)="Ondisplay()">Display button</button>
-<div *ngIf="showbtn">Secreate tune on </div>
-<div *ngFor="let logitem of logArray " [ngStyle]="{backgroundColor :logitem >=5 ?'blue':'tranparent'}" 
+<!-- <app-employee></app-employee> -->
+<!-- <button class="btn btn-primary" (click)="Ondisplay()">Display button</button> -->
+<!-- <div *ngIf="showbtn">Secreate tune on </div>
+<div *ngFor="let logitem of logArray " [ngStyle]="{backgroundColor :logitem >=5 ?'blue':'tranparent'}"
     [ngClass]="{'white-text':logitem >=5}"> {{logitem}} </div>
 <div class="container">
-<div class="row">
+    <div class="row">
+        <div class="col-xs-5">
+            <app-username *ngFor="let serverElement of serverElements">
+                <p>
+                    <strong *ngIf="serverElement.type ==='server'" style="color:red">{{ serverElement.content
+                        }}</strong>
+                    <em *ngIf="serverElement.type ==='buleprint'">{{ serverElement.content }}</em>
+                </p>
+                [element]="serverElement"
+            </app-username>
+        </div>
+    </div>
+</div> -->
+<!-- <div class="row">
     <div class="col-xs-5">
-        <app-username *ngFor="let serverElement of serverElements">
-            <p>
-                <strong *ngIf="serverElement.type ==='server'" style="color:red">{{ serverElement.content }}</strong>
-               <em *ngIf= "serverElement.type ==='buleprint'" >{{ serverElement.content }}</em>
-               </p>
-            [element]="serverElement" 
-        </app-username>
+        <app-game (intervalFried)="onIntervalFried($event)"></app-game>
+        <!-- <div *ngFor="let value of combined"> -->
+<!-- {{ value }} - <b [ngStyle]="checkNumber(value)=='even'?{'background':'red'} : {'background': 'blue'}">
+                {{checkNumber(value) }}</b>
+        </div> -->
+<!-- *ngIf="selectedRecipe ; else infoText" [recipe]="selectedRecipe"></app-recipe-detail>
+        <ng-template #infoText >
+            <p>please select the recipe</p>
+        </ng-template> -->
+<!-- </div> -->
+<!-- </div>
+</div>
+<div class="row">
+    <div class="col-xs-5" >
+        <ng-container *ngFor="let value of combined">
+         <app-odd *ngIf="checkNumber(value)=='odd';else infoText" [number]="value"></app-odd>
+        <ng-template #infoText >
+            <app-even *ngIf="checkNumber(value)=='even'" [number]="value"></app-even>
+            </ng-template>
+        </ng-container>
+        <div>
+            <h4> Attribute Directive</h4>
+            <p appBasichights>the style of the directive...</p>
+            <p appBetterhighlight [defaultColor]="'yellow'" [highlightColor]="'black'">the better-style of the
+                directive...</p>
+        </div>
+        <div [ngSwitch]="value">
+            <p *ngSwitchCase="5 ">Value is 5</p>
+            <p *ngSwitchCase="10 ">Value is 10</p>
+            <p *ngSwitchCase="100 "> Value is 100</p>
+            <p *ngSwitchDefault>Value is default</p>
+        </div>
     </div>
+</div> -->
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <ul class="nav nav-tabs"> -->
+<!-- <li role="presentation" routerLinkActive="active" ><a routerLink="/">Home</a></li>
+           <li role="presentation" ><a [routerLink]="['user']">User</a></li>
+           <li role="presentation" ><a routerLink="/server">Server</a></li> -->
+<!-- </ul> -->
+<!-- </div>
 </div>
 </div>
 <div class="row">
-<div class="col-xs-5">
-    <app-game (intervalFried)="onIntervalFried($event)"></app-game>
-      <div *ngFor="let value of combined">
-        {{ value }} - <b [ngStyle]="checkNumber(value)=='even'?{'background':'red'} : {'background': 'blue'}"> {{ checkNumber(value) }}</b>
+    <div class="container">
+        <router-outlet></router-outlet>
     </div>
-
-</div>
-</div>
-<div class="row">
-<div class="col-xs-5">
-    <!-- <app-odd *ngFor="let oddnumbers of oddnumber" [number]="oddnumbers" ></app-odd>
-    <app-even  *ngFor="let evennumbers of evennumber" [number]="evennumbers" ></app-even> -->
-    <div>
-        <h4> Attribute Directive</h4>
-        <p appBasichights>the style of the directive...</p>
-        <p appBetterhighlight [defaultColor]="'yellow'" [highlightColor]="'black'">the  better-style of the directive...</p>
+</div> -->
+<!-- </div> -->
+<!-- <form (ngSubmit)="OnSelect()" #f="ngForm">
+    <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
+        <div class="form-group">
+            <div class="col-md-4 mb-3">
+                <label for="UserName">First name</label>
+                <input type="text" class="form-control" id="UserName" placeholder="First name" required name ngModel
+                    name="UserName" #name="ngModel">
+                <span class="help-block" *ngIf="!name.valid">Please enter the name </span>
+            </div>
+            <p *ngIf="!userData.valid && userData.touched">User Data is invalid</p>
+        </div>            <!-- <button class="btn btn-primary" type="button">Suggest a Username</button> -->
+<!-- <div class="col-md-4 mb-3">
+                <label for="email">Last name</label>
+                <input type="email" class="form-control" placeholder="email" id="email" required email ngModel
+                    name="email" #email="ngModel">
+                <span class="help-block" *ngIf="!email.valid && email.touched">Please enter the last name</span>
+            </div>
+          
+            <div class="col-md-4 mb-3">
+                <textarea name="QuestionAswer" rows="3" class="form-control" [(ngModel)]="answer"> </textarea>
+            </div>
+            <p>your Reply:-{{answer}}</p>
+        </div>
+        <div class="radio" *ngFor="let gender of genders">
+            <label>
+                <input type="radio" name="gender" ngModel [value]="gender" required> {{gender}}
+            </label>
+        </div>
+        <button class="btn btn-primary" [disabled]="!f.valid" type="submit">Submit form</button>
+    
+</form>
+<hr>
+<div class="row" *ngIf="submitted">
+    <div class="col-xs-12">
+        <h2>your Data</h2>
+        <p>UserName:{{user.User}}</p>
+        <p>Email:{{user.email}}</p>
+        <p>your reply:{{user.QuestionAswer}}</p>
+        <p>Gender:{{user.gender}}</p>
     </div>
-    <div [ngSwitch]="value">
-     <p *ngSwitchCase="5 ">Value is 5</p>
-     <p *ngSwitchCase="10 ">Value is 10</p>
-     <p *ngSwitchCase="100 "> Value is 100</p>
-     <p *ngSwitchDefault>Value is default</p>
+</div> -->
+<form  [FormGroup]="singupFrom">
+    <div class="form-group">
+        <div class="col-md-4 mb-3">
+            <label for="UserName">First name</label>
+            <input type="text" class="form-control" id="UserName" placeholder="First name" required name="UserName">
+        </div>
     </div>
-</div>
-</div>
+    <div class="col-md-4 mb-3">
+        <label for="email">Last name</label>
+        <input type="email" class="form-control" placeholder="email" id="email" required name="email">
+    </div>
+    <div class="radio" *ngFor="let gender of genders">
+        <label>
+            <input type="radio" name="gender" ngModel [value]="gender" required> {{gender}}
+        </label>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit form</button>
+</form>
